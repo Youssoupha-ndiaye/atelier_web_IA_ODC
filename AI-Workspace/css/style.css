@@ -294,9 +294,15 @@ img {
   font-weight: 500;
 }
 
-.historique{
+.historique1{
     color : blue;
     margin-left: 60%
+}
+
+.historique2{
+    color : blue;
+    margin-left: 60%;
+    margin-top: 30px;
 }
 
 .charts-grid {
