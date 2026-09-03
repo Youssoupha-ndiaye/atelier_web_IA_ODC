@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Workspace</title>
 </head>
 <body>
-    
+
+  <header class="app-header">
+    <div class="app-header__brand">
+      <img src="images/logo.png" alt="Logo AI Workspace" class="app-header__logo" onerror="this.style.display='none'">
+      <span class="app-header__title">AI Workspace</span>
+    </div>
+
+    <div class="app-header__user">
+      <img src="images/avatar.png" alt="Avatar utilisateur" class="app-header__avatar" onerror="this.style.display='none'">
+      <span>Admin User</span>
+      <button id="theme-toggle" class="btn-icon" title="Changer de theme">Theme</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+
+    <nav class="sidebar" id="sidebar">
+      <ul class="sidebar__menu">
+        <li><button class="nav-link active" data-view="dashboard">Tableau de bord</button></li>
+        <li><button class="nav-link" data-view="chat">Chat</button></li>
+        <li><button class="nav-link" data-view="resume">Resume de texte</button></li>
+        <li><button class="nav-link" data-view="classification">Classification</button></li>
+        <li><button class="nav-link" data-view="traduction">Traduction</button></li>
+        <li><button class="nav-link" data-view="prediction">Prediction</button></li>
+        <li><button class="nav-link" data-view="historique">Historique</button></li>
+      </ul>
+    </nav>
+
+    <main class="zone-principale" id="zone-principale">
+
+      <section class="view active" id="view-dashboard" data-view="dashboard">
+        <h1 class="view__title">Tableau de bord</h1>
+        <p class="view__subtitle">Bienvenue sur votre espace de travail intelligent.</p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card__label">Jeux de donnees</span>
+            <span class="stat-card__value">24</span>
+            <span class="stat-card__delta">+3 ce mois-ci</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Requetes</span>
+            <span class="stat-card__value">1 256</span>
+            <span class="stat-card__delta">+18% ce mois-ci</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Modeles disponibles</span>
+            <span class="stat-card__value">12</span>
+            <span class="stat-card__delta">+2 ce mois-ci</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Utilisateurs actifs</span>
+            <span class="stat-card__value">8</span>
+            <span class="stat-card__delta">+2 ce mois-ci</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Taches executees</span>
+            <span class="stat-card__value">342</span>
+            <span class="stat-card__delta">+22% ce mois-ci</span>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="card chart-card">
+            <h2 class="card__title">Requetes par jour <span class="card__hint">7 derniers jours</span></h2>
+            <img src="images/requetes_par_jour.png" alt="Graphique des requetes par jour" class="chart-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'chart-placeholder',textContent:'Insere ici : images/repartition_des_requetes.png'}))">
+          </div>
+
+          <div class="card chart-card">
+            <h2 class="card__title">Repartition des requetes par service</h2>
+            <img src="images/repartition_des_requetes.png" alt="Repartition des requetes par service" class="chart-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'chart-placeholder',textContent:'Insere ici : images/repartition-services.png'}))">
+          </div>
+        </div>
+
+        <div class="tables-grid">
+          <div class="card">
+            <h2 class="card__title">Activite recente</h2>
+            <table class="data-table">
+              <thead>
+                <tr>
+                    <th>Activite</th>
+                    <th>Service</th>
+                    <th>Utilisateur</th>
+                    <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>Resume du document_projet.pdf</td>
+                    <td>Resume de texte</td>
+                    <td>Admin User</td>
+                    <td>21/05/2024 14:32</td>
+                </tr>
+                <tr>
+                    <td>Classification de sentiments</td>
+                    <td>Classification</td>
+                    <td>Admin User</td>
+                    <td>21/05/2024 14:21</td>
+                </tr>
+                <tr>
+                    <td>Traduction FR -&gt; EN</td>
+                    <td>Traduction</td>
+                    <td>Admin User</td>
+                    <td>21/05/2024 14:15</td>
+                </tr>
+                <tr>
+                    <td>Discussion sur l'IA generative</td>
+                    <td>Chat</td>
+                    <td>Admin User</td>
+                    <td>21/05/2024 14:05</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h2 class="card__title">Modeles populaires</h2>
+            <table class="data-table">
+              <thead>
+                <tr><th>Modele</th><th>Utilisations</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>mistral-7b-instruct</td><td>532</td></tr>
+                <tr><td>gpt-4-turbo</td><td>389</td></tr>
+                <tr><td>llama-3-8b</td><td>256</td></tr>
+                <tr><td>bert-base-uncased</td><td>179</td></tr>
+                <tr><td>google-transate-v1</td><td>142</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-chat" data-view="chat"></section>
+      <section class="view" id="view-resume" data-view="resume"></section>
+      <section class="view" id="view-classification" data-view="classification"></section>
+      <section class="view" id="view-traduction" data-view="traduction"></section>
+      <section class="view" id="view-prediction" data-view="prediction"></section>
+      <section class="view" id="view-historique" data-view="historique"></section>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
